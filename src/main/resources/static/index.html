@@ -346,7 +346,7 @@
         const labels = { friendly: 'Friendly', calm: 'Calm', energetic: 'Energetic' };
         document.getElementById('mood-badge').textContent = labels[mood];
 
-        fetch('http://localhost:8080/api/mood', {
+        fetch('/api/mood', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ mood: mood })
@@ -402,7 +402,7 @@
         showTyping();
 
         try {
-            const response = await fetch('http://localhost:8080/api/chat', {
+            const response = await fetch('/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ userMessage: text })
